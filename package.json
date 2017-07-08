@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "mongoose": "^4.10.2",
-    "node-restful": "^0.2.6"
+    "body-parser": "*",
+    "express": "*",
+    "mongoose": "*",
+    "node-restful": "*",
+    "mongojs": "*",
+    "cors": "*"
   }
 }

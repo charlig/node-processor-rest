@@ -2,6 +2,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParaser = require('body-parser');
+var router = express.Router();
 
 
 //connect to mongoDB
@@ -13,7 +14,9 @@ app.use(bodyParaser.urlencoded({extended:true}));
 app.use(bodyParaser.json());
 
 // routes
-app.use('/api',require('./routes/api'));
+// app.use('/api',require('./routes/api'));
+app.use('/log',require('./routes/log'));
+// require('./routes/log')(app);
 
 // sart server
 app.listen(1000);
