@@ -2,6 +2,8 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParaser = require('body-parser');
+var path = require('path');
+
 var router = express.Router();
 
 
@@ -13,9 +15,15 @@ var app = express();
 app.use(bodyParaser.urlencoded({extended:true}));
 app.use(bodyParaser.json());
 
+// view engine
+app.set('views',path.join(__dirname,'views'));
+app.set('view engine','ejs');
+app.engine('html',require('ejs').renderFile);
+
 // routes
 // app.use('/api',require('./routes/api'));
 app.use('/log',require('./routes/log'));
+app.use('/',require('./routes/index'));
 // require('./routes/log')(app);
 
 // sart server
